@@ -1,16 +1,17 @@
 package com.example.udemytutorial.domain.repository
 
+import androidx.lifecycle.LiveData
 import com.example.udemytutorial.domain.model.ShopItem
 
 interface ShopListRepository {
 
-    suspend fun addShopItem(shopItem: ShopItem)
+     fun addShopItem(shopItem: ShopItem)
 
-    suspend fun deleteShopItem(shopItem: ShopItem)
+     fun deleteShopItem(shopItem: ShopItem)
 
-    suspend fun editShopItem(shopItem: ShopItem)
+     fun editShopItem(shopItem: ShopItem)
 
-    suspend fun getShopItemById(shopItemId: Int): ShopItem
+     fun getShopItemById(shopItemId: Int): ShopItem
 
-    suspend fun getShopList(): List<ShopItem>
+     fun getShopList(): LiveData<List<ShopItem>>
 }
