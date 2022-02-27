@@ -1,7 +1,8 @@
-package com.example.udemytutorial
+package com.example.udemytutorial.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.udemytutorial.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
