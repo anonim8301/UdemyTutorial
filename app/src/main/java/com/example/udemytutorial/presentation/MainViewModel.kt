@@ -1,5 +1,6 @@
 package com.example.udemytutorial.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.udemytutorial.data.ShopListRepositoryImpl
 import com.example.udemytutorial.domain.model.ShopItem
@@ -28,4 +29,7 @@ class MainViewModel : ViewModel() {
         editShopItemUseCase.editShopItem(newItem)
     }
 
+    fun editShopItemUseCase(shopItem: ShopItem){
+        Log.d("editShopItem" , shopItem.toString())
+    }
 }
