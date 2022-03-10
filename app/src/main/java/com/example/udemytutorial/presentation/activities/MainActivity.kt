@@ -1,4 +1,4 @@
-package com.example.udemytutorial.presentation
+package com.example.udemytutorial.presentation.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,8 @@ import com.example.udemytutorial.R
 import com.example.udemytutorial.common.CONSTANTS.MAX_POOL_SIZE
 import com.example.udemytutorial.common.CONSTANTS.VIEW_TYPE_DISABLED
 import com.example.udemytutorial.common.CONSTANTS.VIEW_TYPE_ENABLED
+import com.example.udemytutorial.presentation.MainViewModel
+import com.example.udemytutorial.presentation.ShopListAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setupRecycleView()
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         viewModel.shopList.observe(this) {
-            shopListAdapter.shopList = it
+            shopListAdapter.submitList(it)
         }
     }
 
@@ -53,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val item = shopListAdapter.shopList[viewHolder.adapterPosition]
+                val item = shopListAdapter.currentList[viewHolder.adapterPosition]
                 viewModel.deleteShopItem(item)
             }
         }
