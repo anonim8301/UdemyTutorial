@@ -1,4 +1,4 @@
-package com.example.udemytutorial.presentation
+package com.example.udemytutorial.presentation.view_models
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
